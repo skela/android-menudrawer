@@ -23,7 +23,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 
 public abstract class MenuDrawer extends ViewGroup {
-
+    
     /**
      * Callback interface for changing state of the drawer.
      */
