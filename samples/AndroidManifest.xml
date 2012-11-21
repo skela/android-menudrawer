@@ -26,6 +26,8 @@
         <activity android:name="net.simonvt.menudrawer.samples.ListActivitySample" />
         <activity android:name="net.simonvt.menudrawer.samples.ActionBarOverlaySample" />
         <activity android:name="net.simonvt.menudrawer.samples.ViewPagerSample" />
+        <activity android:name="net.simonvt.menudrawer.samples.DualMenuSample" />
+                
         <activity
             android:name="net.simonvt.menudrawer.samples.RightMenuSample"
             android:theme="@style/SampleTheme.RightDrawer" />

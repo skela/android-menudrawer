@@ -10,6 +10,8 @@
 
 !art/
 
+.DS_Store
+
 !library/
 library/*
 !library/src/

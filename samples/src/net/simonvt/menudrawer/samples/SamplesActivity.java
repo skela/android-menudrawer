@@ -31,6 +31,9 @@ public class SamplesActivity extends ListActivity {
         mAdapter.addSample("Touch Mode", "The menu touch behavior change according to different"
                 + " content view state (Ex: View Pager)", ViewPagerSample.class);
 
+        mAdapter.addSample("Dual Mode", "Left and Right Menus", DualMenuSample.class);
+
+        
         setListAdapter(mAdapter);
     }
 

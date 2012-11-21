@@ -55,6 +55,11 @@ public class MenuDrawerManager {
      */
     private Bundle mRestoredState;
 
+    public void setMenuPosition(int menuPosition)
+    {
+    	mMenuDrawer.setMenuPosition(menuPosition);    	
+    }
+    
     /**
      * Constructor to use when creating the menu drawer.
      *
@@ -75,11 +80,14 @@ public class MenuDrawerManager {
      * @param gravity  Where to position the menu. Can be either {@link MenuDrawer#MENU_POSITION_LEFT} or
      *                 {@link MenuDrawer#MENU_POSITION_RIGHT}.
      */
-    public MenuDrawerManager(Activity activity, int dragMode, int gravity) {
+    public MenuDrawerManager(Activity activity, int dragMode, int gravity) 
+    {
         mActivity = activity;
         mDragMode = dragMode;
-
-        mMenuDrawer = gravity == MenuDrawer.MENU_POSITION_RIGHT ? new RightDrawer(activity) : new LeftDrawer(activity);
+        if (gravity==MenuDrawer.MENU_POSITION_BOTH)
+        	mMenuDrawer = new DualDrawer(activity);
+        else
+        	mMenuDrawer = gravity == MenuDrawer.MENU_POSITION_RIGHT ? new RightDrawer(activity) : new LeftDrawer(activity);
         mMenuDrawer.setDragMode(dragMode);
         mMenuDrawer.setId(R.id.md__layout);
         mMenuContainer = (ViewGroup) mMenuDrawer.findViewById(R.id.md__menu);

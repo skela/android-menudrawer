@@ -53,7 +53,7 @@ public class LeftDrawer extends MenuDrawer {
      *
      * @param offsetPixels The number of pixels the content if offset.
      */
-    private void offsetMenu(int offsetPixels) {
+    protected void offsetMenu(int offsetPixels) {
         if (mOffsetMenu && mMenuWidth != 0) {
             final int menuWidth = mMenuWidth;
             final float openRatio = (menuWidth - (float) offsetPixels) / menuWidth;

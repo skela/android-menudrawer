@@ -2,6 +2,7 @@ package net.simonvt.widget;
 
 import net.simonvt.menudrawer.R;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -123,6 +124,12 @@ public abstract class MenuDrawer extends ViewGroup {
      */
     public static final int MENU_POSITION_RIGHT = 1;
 
+    /**
+     * Allows the creation of a dual mode Drawer.
+     */
+    public static final int MENU_POSITION_BOTH = 2;
+
+    
     /**
      * Disallow opening the drawer by dragging the screen.
      */
@@ -964,7 +971,8 @@ public abstract class MenuDrawer extends ViewGroup {
     /**
      * Callback when each frame in the drawer animation should be drawn.
      */
-    private void postAnimationInvalidate() {
+    @SuppressLint("NewApi")
+	private void postAnimationInvalidate() {
         if (mScroller.computeScrollOffset()) {
             final int oldX = mOffsetPixels;
             final int x = mScroller.getCurrX();
@@ -994,7 +1002,8 @@ public abstract class MenuDrawer extends ViewGroup {
     /**
      * Callback when each frame in the peek drawer animation should be drawn.
      */
-    private void peekDrawerInvalidate() {
+    @SuppressLint("NewApi")
+	private void peekDrawerInvalidate() {
         if (mPeekScroller.computeScrollOffset()) {
             final int oldX = mOffsetPixels;
             final int x = mPeekScroller.getCurrX();
@@ -1039,7 +1048,8 @@ public abstract class MenuDrawer extends ViewGroup {
         stopLayerTranslation();
     }
 
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     public void postOnAnimation(Runnable action) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             super.postOnAnimation(action);
@@ -1256,4 +1266,10 @@ public abstract class MenuDrawer extends ViewGroup {
         setOffsetPixels(menuOpen ? mMenuWidth : 0);
         mDrawerState = menuOpen ? STATE_OPEN : STATE_CLOSED;
     }
+
+	public void setMenuPosition(int menuPosition)
+	{
+		// Nothing
+		
+	}
 }
