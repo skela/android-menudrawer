@@ -391,7 +391,8 @@ public abstract class MenuDrawer extends ViewGroup {
         this(context, attrs, R.attr.menuDrawerStyle);
     }
 
-    public MenuDrawer(Context context, AttributeSet attrs, int defStyle) {
+    @SuppressWarnings("deprecation")
+	public MenuDrawer(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         setWillNotDraw(false);
@@ -425,7 +426,7 @@ public abstract class MenuDrawer extends ViewGroup {
         a.recycle();
 
         mMenuContainer = new BuildLayerFrameLayout(context);
-        mMenuContainer.setId(R.id.md__menu);
+        mMenuContainer.setId(R.id.md__menu);        
         mMenuContainer.setBackgroundDrawable(menuBackground);
         addView(mMenuContainer);
 

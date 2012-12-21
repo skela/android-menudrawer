@@ -4,7 +4,8 @@ import android.view.animation.Interpolator;
 
 public class PeekInterpolator implements Interpolator {
 
-    private static final String TAG = "PeekInterpolator";
+    @SuppressWarnings("unused")
+	private static final String TAG = "PeekInterpolator";
 
     private static final SinusoidalInterpolator SINUSOIDAL_INTERPOLATOR = new SinusoidalInterpolator();
 
