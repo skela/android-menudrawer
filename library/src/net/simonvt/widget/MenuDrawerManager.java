@@ -1,6 +1,7 @@
 package net.simonvt.widget;
 
 import net.simonvt.menudrawer.R;
+import net.simonvt.widget.MenuDrawer.OnDrawerStateChangeListener;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -348,5 +349,15 @@ public class MenuDrawerManager {
     public void onRestoreDrawerState(Parcelable in) {
         mRestoredState = (Bundle) in;
         mMenuDrawer.restoreState(mRestoredState.getParcelable(STATE_LAYOUT));
+    }
+    
+    /**
+     * Register a callback to be invoked when the drawer state changes.
+     *
+     * @param listener The callback that will run.
+     */
+    public void setOnDrawerStateChangeListener(OnDrawerStateChangeListener listener) 
+    {
+    	mMenuDrawer.setOnDrawerStateChangeListener(listener);        
     }
 }
